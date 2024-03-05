@@ -3,16 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Greet User</title>
+    <title>Data Submission Form</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="container">
-        <label for="nameInput">Enter your name:</label>
-        <input type="text" id="nameInput" placeholder="Type your name">
-        <button onclick="greetUser()">Enter!!!</button>
-        <p id="output"></p>
+        <label for="usernameInput">Username:</label>
+        <input type="text" id="usernameInput" placeholder="Enter your username">
+
+        <label for="passwordInput">Password:</label>
+        <input type="password" id="passwordInput" placeholder="Enter your password">
+
+        <label for="commentInput">Comment:</label>
+        <textarea id="commentInput" placeholder="Type your comment"></textarea>
+
+        <button onclick="submitData()">Update</button>
     </div>
 
     <script src="script.js"></script>
