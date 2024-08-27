@@ -31,7 +31,15 @@
         <li><a id="intCooking" href="#">Cooking</a></li>
         <li><a id="intDrawing" href="#">Drawing</a></li>
       </ul>
-    </li>    
+    </li>
+    <li class="dropdown">
+      <a id="poker" href="#">Poker</a>
+      <ul class="dropdown-content">
+        <li><a id="preflopRange" href="#">Preflop Range</a></li>
+        <li><a id="handsReview" href="#">Hands Review</a></li>
+        <li><a id="note" href="#">Note</a></li>
+      </ul>
+    </li>         
   </ul>
 </nav>
 
@@ -53,5 +61,11 @@
     document.getElementById('intCafe').href = `${baseUrl}?page=intCafe`;
     document.getElementById('intCooking').href = `${baseUrl}?page=intCooking`;
     document.getElementById('intDrawing').href = `${baseUrl}?page=intDrawing`;
+
+    document.getElementById('poker').href = `${baseUrl}?page=poker`;
+    document.getElementById('preflopRange').href = `${baseUrl}?page=preflopRange`;
+    document.getElementById('handsReview').href = `${baseUrl}?page=handsReview`;
+    document.getElementById('note').href = `${baseUrl}?page=note`;
+
   }
 </script>

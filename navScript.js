@@ -1,5 +1,5 @@
 
-  google.script.run.withSuccessHandler(setHref).getBaseURL();  // Ensure this matches your server-side function name
+  const baseUrl = "https://lichunblacktea.github.io/trymybest";
   function setHref(baseUrl){
     document.getElementById('homeLink').href = `${baseUrl}?page=index`;
 
