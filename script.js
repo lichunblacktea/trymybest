@@ -25,11 +25,7 @@ function submitData() {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-            name: 'John Doe',
-            email: 'john.doe@example.com',
-            message: 'Hello, this is a test message!'
-        }),
+        body: JSON.stringify(data)
     })
         
     .then(response => response.json())
@@ -40,7 +36,7 @@ function submitData() {
         console.error('Error:', error);
     });
 
-
+    console.log
 
     // Update the Google Sheets iframe with the published sheet link
     var googleSheetIframe = document.getElementById('googleSheet');
