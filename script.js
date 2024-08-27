@@ -40,5 +40,5 @@ function submitData() {
 
     // Update the Google Sheets iframe with the published sheet link
     var googleSheetIframe = document.getElementById('googleSheet');
-    googleSheetIframe.src = 'https://docs.google.com/spreadsheets/d/1yIQXMRGSomKZ-Kn1Te3G4TS4_Gy-sxHJbvIcn24U3yQ/edit?usp=sharing';
+    googleSheetIframe.src = 'https://docs.google.com/spreadsheets/d/1yIQXMRGSomKZ-Kn1Te3G4TS4_Gy-sxHJbvIcn24U3yQ';
 }
