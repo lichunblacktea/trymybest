@@ -1,29 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Submission Form</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <div class="container">
-        <label for="usernameInput">Username:</label>
-        <input type="text" id="usernameInput" placeholder="Enter your username">
-
-        <label for="passwordInput">Password:</label>
-        <input type="password" id="passwordInput" placeholder="Enter your password">
-
-        <label for="commentInput">Comment:</label>
-        <textarea id="commentInput" placeholder="Type your comment"></textarea>
-
-        <button onclick="submitData()">Update</button>
+<html>
+  <head>
+    <base target="_top">
+    <script src="style.html"></script>
+  </head>
+  <body>
+    <script src="nav.html"></script>
+    <h1>My Blog</h1>
+    <div id="blogContainer" class="blogGrid">
+      <div id="example"class="blogPost"> 
+        <h2> Example Title</h2>
+        <p> Example content</p>
+        <small> Example timestamp </small>
+      </div>
     </div>
 
-    <iframe id="googleSheet" src="" width="100%" height="400" frameborder="0" style="border:0"></iframe>
+    <script>
+      
+      google.script.run.withSuccessHandler(displayBlogs).getBlogPosts();
 
-    <script src="script.js"></script>
+      function displayBlogs(data) {
+        var container = document.getElementById('blogContainer');
+        
+        data.forEach(function(row) {
+          var post = document.createElement('div');
+          post.id = "post" + row[0];
+          post.className = 'blogPost';  // Apply the CSS class
+          post.innerHTML = row[1].slice(1, -1) + '<small>' + "Last updated: " + row[2].slice(1, -1) + '</small>';
+          container.appendChild(post);
+        });
+      }
 
-</body>
+    </script>
+
+  </body>
 </html>
