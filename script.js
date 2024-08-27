@@ -1,38 +1,57 @@
-function submitData() {
-    // Get the input values
-    var username = document.getElementById('usernameInput').value;
-    var password = document.getElementById('passwordInput').value;
-    var comment = document.getElementById('commentInput').value;
+<nav> 
+  <ul>
+    <li class="dropdown">
+      <a id="homeLink" href="#">Home</a>
+      <ul class="dropdown-content">
+        <li><a href="#">Sub-item 1</a></li>
+        <li><a href="#">Sub-item 2</a></li>
+        <li><a href="#">Sub-item 3</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a id="posts" href="#">Blog Posts</a>
+      <ul class="dropdown-content">
+        <li><a id="postsPreview" href="#">Preview</a></li>
+        <li><a id="postsEdit" href="#">Edit</a></li>
+        <li><a id="postsAdd" href="#">Add</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a id="basicTemplate" href="#">Basic Template</a>
+      <ul class="dropdown-content">
+        <li><a href="#">Sub-item 1</a></li>
+        <li><a href="#">Sub-item 2</a></li>
+        <li><a href="#">Sub-item 3</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a id="int" href="#">Interest</a>
+      <ul class="dropdown-content">
+        <li><a id="intCafe" href="#">Cafe</a></li>
+        <li><a id="intCooking" href="#">Cooking</a></li>
+        <li><a id="intDrawing" href="#">Drawing</a></li>
+      </ul>
+    </li>    
+  </ul>
+</nav>
 
-    // Check if any field is empty
-    if (!username || !password || !comment) {
-        alert("Please fill in all fields before submitting.");
-        return;
-    }
+<hr>
 
-    // Construct the data object (replace with your Google Sheets API endpoint)
-    var data = {
-        username: username,
-        password: password,
-        comment: comment
-    };
+<script>
+  google.script.run.withSuccessHandler(setHref).getBaseURL();  // Ensure this matches your server-side function name
+  function setHref(baseUrl){
+    document.getElementById('homeLink').href = `${baseUrl}?page=index`;
 
-    // Simulate sending data to Google Sheets (replace with actual API call)
-    console.log("Data to be sent to Google Sheets:", data);
+    document.getElementById('posts').href = `${baseUrl}?page=posts`;
+    document.getElementById('postsPreview').href = `${baseUrl}?page=postsPreview`;
+    document.getElementById('postsEdit').href = `${baseUrl}?page=postsEdit`;
+    document.getElementById('postsAdd').href = `${baseUrl}?page=postsAdd`;
 
-    fetch('https://script.google.com/macros/s/AKfycbyaKcfvEfVRWA5C1fmmgRdZrVVaneGgEN8hqti_csimTXCB9AGubvGiBlCysFy-zxJFzw/exec', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data)
-    })
-        
-    .then(response => response.json())
-    .then(result => {
-        console.log('Success:', result);
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-}
+    document.getElementById('basicTemplate').href = `${baseUrl}?page=basictemplate`;
+
+    document.getElementById('int').href = `${baseUrl}?page=int`;
+    document.getElementById('intCafe').href = `${baseUrl}?page=intCafe`;
+    document.getElementById('intCooking').href = `${baseUrl}?page=intCooking`;
+    document.getElementById('intDrawing').href = `${baseUrl}?page=intDrawing`;
+  }
+</script>
