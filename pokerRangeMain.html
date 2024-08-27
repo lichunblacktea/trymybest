@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style src = "pokerRange.css"></style>
+</head>
+<body>
+  <div class="container">
+    <div>
+      <h3>Select Criteria</h3>
+      <label for="hero">Hero:</label>
+      <div id="heroButtonsDiv" class="buttonGroup"></div><br><br>
+      <label for="phase">Phase:</label>
+      <div id="phaseButtonsDiv" class="buttonGroup"></div><br><br>
+      <label for="opponent">Opponent:</label>
+      <div id="opponentButtonsDiv" class="buttonGroup"></div><br><br>
+      
+      <h3>Range Table</h3>
+      <table id="resultTableBody" border="1">
+        <thead>
+          <tr>
+            <th>Action</th>
+            <th >Range</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+
+      <div>
+        <h3>Legend</h3>
+        <table>
+            <tr>
+                <th>Action</th>
+                <td>Open Raise/2 bet</td>
+                <td>Open Raise/2 bet bluff</td>
+                <td>Limp</td>
+                <td>3 bet value</td>
+                <td>3 bet bluff</td>
+                <td>Call</td>
+                <td>Fold</td>
+                <td>4 bet value</td>
+                <td>4 bet bluff</td>
+            </tr>
+            <tr>
+                <th>Color</th>
+                <td><div class="square" style="background-color: #4CAF50; width: 15px; height: 15px;"></div></td>
+                <td><div class="square" style="background-color: #d9ead3; width: 15px; height: 15px;"></div></td>
+                <td><div class="square" style="background-color: #ffe599; width: 15px; height: 15px;"></div></td>
+                <td><div class="square" style="background-color: #2890ed; width: 15px; height: 15px;"></div></td>
+                <td><div class="square" style="background-color: #88c3f2; width: 15px; height: 15px;"></div></td>
+                <td><div class="square" style="background-color: #ffe599; width: 15px; height: 15px;"></div></td>
+                <td><div class="square" style="background-color: #BCBCBC; width: 15px; height: 15px;"></div></td>
+                <td><div class="square" style="background-color: #f44336; width: 15px; height: 15px;"></div></td>
+                <td><div class="square" style="background-color: #f4cccc; width: 15px; height: 15px;"></div></td>
+            </tr>
+        </table>
+      </div>      
+    </div>
+
+    <div>
+      <div>
+        <h3>Selected Hands:</h3>
+        <textarea id="selectionArea"></textarea>
+        <button id="submitButton">Submit</button>
+      </div>
+      
+      <h3>Poker Range</h3>
+      <table id="pokerMatrix">
+        <tbody>
+          <tr>
+            <td></td>
+            <!-- Dynamic generation of header cells -->
+          </tr>
+          <!-- Dynamic generation of hand combinations -->
+        </tbody>
+      </table>
+      
+    </div>
+  </div>
+
+  <script src="pokerScript.js"></script>
+  <script src="mainScript.js"></script>
+   
+</body>
+</html>
