@@ -2,37 +2,32 @@
 <html>
   <head>
     <base target="_top">
-    <style src="style.css"></style>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <nav src="nav.html"></nav>
+    <nav id="navbar"></nav> <!-- Placeholder for the nav content -->
+    
     <script src="navScript.js"></script>
+    
     <h1>My Blog</h1>
     <div id="blogContainer" class="blogGrid">
-      <div id="example"class="blogPost"> 
-        <h2> Example Title</h2>
-        <p> Example content</p>
-        <small> Example timestamp </small>
+      <div id="example" class="blogPost"> 
+        <h2>Example Title</h2>
+        <p>Example content</p>
+        <small>Example timestamp</small>
       </div>
     </div>
 
     <script>
-      
-      google.script.run.withSuccessHandler(displayBlogs).getBlogPosts();
-
-      function displayBlogs(data) {
-        var container = document.getElementById('blogContainer');
-        
-        data.forEach(function(row) {
-          var post = document.createElement('div');
-          post.id = "post" + row[0];
-          post.className = 'blogPost';  // Apply the CSS class
-          post.innerHTML = row[1].slice(1, -1) + '<small>' + "Last updated: " + row[2].slice(1, -1) + '</small>';
-          container.appendChild(post);
-        });
-      }
-
+      // Use JavaScript to load the nav.html content
+      document.addEventListener("DOMContentLoaded", function() {
+        fetch('nav.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('navbar').innerHTML = data;
+          })
+          .catch(error => console.error('Error loading nav:', error));
+      });
     </script>
-
   </body>
 </html>
