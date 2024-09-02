@@ -1,6 +1,6 @@
 
   //replace url for navigator bar
-  const baseUrl = `${window.location.origin}/trymybest`;
+  const baseUrl = `${window.location.origin}`;
   //const baseUrl = `${window.location.origin}`
   console.log (baseUrl);
   document.getElementById('homeLink').href = `${baseUrl}/index`;
