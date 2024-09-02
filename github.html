@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World from Lambda</title>
+</head>
+<body>
+    <h1>Lambda Output:</h1>
+    <p id="lambda-output">Loading...</p>
+
+    <script>
+        async function fetchLambdaOutput() {
+            try {
+                const response = await fetch('https://cswa238cfh.execute-api.us-east-1.amazonaws.com/v1/hello'); // Replace with your API Gateway URL
+                console.log(response);
+                const data = await response.json();
+
+                document.getElementById('lambda-output').innerText = data.body;
+            } catch (error) {
+                document.getElementById('lambda-output').innerText = 'Error fetching Lambda output';
+                console.error('Error:', error);
+            }
+        }
+
+        fetchLambdaOutput();
+    </script>
+</body>
+</html>

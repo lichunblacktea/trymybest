@@ -5,9 +5,11 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <nav id="navbar"></nav> <!-- Placeholder for the nav content -->
+    <header>
+      <nav id="navbar"></nav> <!-- Placeholder for the navigation -->
+    </header>
     
-    <script src="navScript.js"></script>
+    <h1>Hello</h1>
     
     <h1>My Blog</h1>
     <div id="blogContainer" class="blogGrid">
@@ -18,16 +20,6 @@
       </div>
     </div>
 
-    <script>
-      // Use JavaScript to load the nav.html content
-      document.addEventListener("DOMContentLoaded", function() {
-        fetch('nav.html')
-          .then(response => response.text())
-          .then(data => {
-            document.getElementById('navbar').innerHTML = data;
-          })
-          .catch(error => console.error('Error loading nav:', error));
-      });
-    </script>
+    <script src = "script.js"></script>
   </body>
 </html>
