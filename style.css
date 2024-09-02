@@ -77,3 +77,142 @@
   .dropdown-content li:last-child {
     border-bottom: none;
   }
+
+  .buttonGroup {
+    display: inline;
+  }
+  
+  .lightup {
+    background-color: #d0eaff; 
+  }
+
+  /* Poker range matrix */
+  body {
+    font-family: Arial, sans-serif;
+    display: flex; /* Changed from 'vertical' to 'flex' */
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  table {
+    border-collapse: collapse;
+    margin-right: 20px; /* This can be adjusted or removed if needed */
+  }
+
+  th, td {
+    border: 1px solid #000;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  .pair {
+    background-color: #FFFFFF;
+  }
+
+  .suited {
+    background-color: #FFFFFF;
+  }
+
+  .offsuit {
+    background-color: #FFFFFF;
+  }
+
+  .selected {
+    background-color: #6bf0f2; /* Highlight selected cells */
+  }
+
+  #selectionArea {
+    width: 200px;
+    height: 300px;
+    padding: 10px;
+    border: 1px solid #000;
+    background-color: #fafafa;
+    overflow-y: auto;
+  }
+
+  button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  /* Define colors for each group */
+  .openRaise2Bet {
+    background: #4CAF50; /* Green */
+  }
+
+  .openRaise2BetBluff {
+    background: #8BC34A; /* Light green */
+  }
+
+  .limp {
+    background: #ead1dc; /* purple like */
+  }
+
+  .threeBetValue {
+    background: #2196F3; /* Blue */
+  }
+
+  .threeBetBluff {
+    background: #64B5F6; /* Light blue */
+  }
+
+  .call {
+    background: #ffe599; /* light yellow */
+  }
+
+  .fold {
+    background: #BCBCBC; /* light grey */
+  }
+
+  .fourBetValue {
+    background: #f44336; /* red */
+  }
+
+  .fourBetBluff {
+    background: #f4cccc; /* Light red */
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Create 2 equal-width columns */
+    gap: 10px; /* Add space between grid items */
+    gap: 20px; /* Adjust space between columns as needed */
+    padding: 20px;
+  }
+
+  textarea#selectionArea {
+    margin-top: 10px;
+    width: 100%; /* Full width of the column */
+    height: 50px; /* Adjust as needed */
+  }
+
+  button#submitButton {
+    margin-top: 10px;
+  }
+
+  #resultTableBody td {
+    word-wrap: break-word; /* Allow long words to break and wrap to the next line */
+    word-break: break-all; /* Break long words at any character */
+    min-width: 100px;
+    max-width: 500px; /* Optional: Set a maximum width for the column */
+  }
+
+
+  /* Media query for smaller screens */
+  @media (max-width: 800px) {
+    .container {
+      grid-template-columns: 1fr; /* Single column layout */
+    }
+
+  }
+
